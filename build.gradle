@@ -5,7 +5,9 @@ plugins {
 }
 group 'zeroThreeZeroFour_selfStudy'
 version '1.0.4-SNAPSHOT-'+new Date().format("yyyyMMddHHmmss")
-sourceCompatibility = 1.8
+//sourceCompatibility = 1.8
+sourceCompatibility = 11
+
 
 
 repositories {
@@ -23,11 +25,16 @@ dependencies {
     implementation('org.springframework.boot:spring-boot-starter-web')
     implementation('org.springframework.boot:spring-boot-starter-mustache')
 
+//    implementation('org.projectlombok:lombok')
+//    annotationProcessor('org.projectlombok:lombok')
+//    testImplementation('org.projectlombok:lombok')
+//    testAnnotationProcessor('org.projectlombok:lombok')
 
-    implementation('org.projectlombok:lombok')
-    annotationProcessor('org.projectlombok:lombok')
-    testImplementation('org.projectlombok:lombok')
-    testAnnotationProcessor('org.projectlombok:lombok')
+    compileOnly 'org.projectlombok:lombok:1.18.22'
+    annotationProcessor 'org.projectlombok:lombok:1.18.22'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.22'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.22'
 
     implementation('org.springframework.boot:spring-boot-starter-data-jpa')
     implementation("org.mariadb.jdbc:mariadb-java-client")
