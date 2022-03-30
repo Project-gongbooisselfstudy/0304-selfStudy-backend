@@ -24,6 +24,7 @@ dependencies {
 
     implementation('org.springframework.boot:spring-boot-starter-web')
     implementation('org.springframework.boot:spring-boot-starter-mustache')
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 
 //    implementation('org.projectlombok:lombok')
 //    annotationProcessor('org.projectlombok:lombok')
@@ -36,9 +37,12 @@ dependencies {
     testCompileOnly 'org.projectlombok:lombok:1.18.22'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.22'
 
-    implementation('org.springframework.boot:spring-boot-starter-data-jpa')
-    implementation("org.mariadb.jdbc:mariadb-java-client")
-    implementation('com.h2database:h2')
+//    implementation('org.springframework.boot:spring-boot-starter-data-jpa')
+//    implementation("org.mysql.jdbc:mysql-java-client")
+//    runtimeOnly 'mysql:mysql-connector-java'
+
+    implementation("mysql:mysql-connector-java:8.0.21")
+    implementation group: 'org.springframework', name: 'spring-jdbc', version: '5.2.3.RELEASE'
 
     implementation('org.springframework.boot:spring-boot-starter-oauth2-client')
     implementation('org.springframework.session:spring-session-jdbc')
